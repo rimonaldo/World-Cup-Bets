@@ -12,25 +12,40 @@
 */
 
 // l
-$body-l-lh: 24px;
-$body-l-fs: 16px;
+$body-l-fs: clamp(6px, 5vw, 1.1rem);
+$body-l-lh: clamp(0.5rem, 4vw, 1.2em);
 $body-l-w: 300;
 // m
-$body-m-fs: clamp(6px,5vw,1.2rem);
-$body-m-lh: 1em;
+$body-m-fs: clamp(6px, 2.5vw, 1rem);
+$body-m-lh: 1.2em;
 $body-m-w: 300;
 // s
 $body-s-lh: 16px;
 $body-s-fs: 12px;
 $body-s-w: 300;
 
-@mixin body {
+@mixin body-s {
+   line-height: $body-s-lh;
+   font-size: $body-s-fs;
+}
+
+@mixin body-m {
    line-height: $body-m-lh;
    font-size: $body-m-fs;
-   font-weight: $body-m-w;
+}
 
+@mixin body-l {
+   line-height: $body-l-lh;
+   font-size: $body-l-fs;
+}
+
+@mixin body-all {
+   @include body-l;
+   @media only screen and (max-width: $tablet-breakpoint) {
+      @include body-m;
+   }
 }
 
 .body {
-   @include body;
+   @include body-all;
 }

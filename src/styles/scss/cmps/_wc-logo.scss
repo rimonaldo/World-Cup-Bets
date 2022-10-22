@@ -1,11 +1,9 @@
 .wc-logo {
    width: 100%;
-   height: $heroHeight;
-   min-height: max(50px,80%);
+   // min-height: max(50px,50%);
    position: relative;
    display: flex;
    align-items: center;
-
    img {
       height: 100%;
       content: url(https://i.ibb.co/RhQLbZn/wc-logo.png);

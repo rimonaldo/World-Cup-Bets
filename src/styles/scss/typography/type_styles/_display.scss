@@ -16,7 +16,7 @@
    src: url(../fonts/qatar22-bold.ttf);
 }
 // l
-$display-l-fs: clamp(1.5rem, 6vw, 5rem);
+$display-l-fs: clamp(1.5rem, 7vw, 5rem);
 $display-l-lh: 1em;
 $display-l-w: 400;
 // m
@@ -57,18 +57,9 @@ $display-s-w: 400;
 @mixin display-exp {
    font-family: qatar22;
    @include display-l;
-   @media only screen and (max-width: $tablet-breakpoint) {
-      font-size: $display-m-fs;
-   }
-   @media only screen and (max-width: $mobile-breakpoint) {
-      font-size: $display-s-fs;
-   }
 }
 
-@mixin display-exp-l {
-   font-family: qatar22;
-   @include display-l;
-}
+
 
 .display-exp {
    @include display-exp;

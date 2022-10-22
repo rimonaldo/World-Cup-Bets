@@ -1,6 +1,16 @@
 .landing-page{
    padding: 0 15vw;
-   @media only screen and (max-width: $tablet-breakpoint) {
+
+   @media only screen and (max-width: 1500px) {
+      padding: 0 10vw;
+   
+   }
+
+   @media only screen and (max-width: $break-laptop) {
+      padding: 0 5vw;
+   
+   }
+   @media only screen and (max-width: $break-tablet) {
       padding: 0 5vw;
    
    }

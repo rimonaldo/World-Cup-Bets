@@ -1,0 +1,16 @@
+.ts-display-body {
+   display: flex;
+   flex-direction: column;
+   
+   .display-exp {
+      color: $clr1;
+   }
+
+   .body {
+      text-overflow: clip;
+      white-space: wrap;
+   }
+   > * {
+         // border: 1px black solid;
+   }
+}

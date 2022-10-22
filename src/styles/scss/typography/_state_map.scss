@@ -29,7 +29,8 @@
       padding: 0 .5em;
       color: black;
       border-right: 1px black solid;
-      width: 20%;
+      min-width: 20%;
+      width: max-content;
       line-height: 1.5em;
 
    }
