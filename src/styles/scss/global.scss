@@ -1,0 +1,70 @@
+// Externals
+
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+
+
+// TYPOGRAPHY
+@import "typography/typo_examples";
+@import "typography/state_map";
+@import "typography/type_scale";
+@import "typography/type_styles/display";
+@import "typography/type_styles/headline";
+@import "typography/type_styles/title";
+@import "typography/type_styles/body";
+@import "typography/type_styles/label";
+
+// Basics
+@import "basics/typography";
+@import "basics/base";
+@import "basics/helpers";
+@import "basics/modals";
+@import "basics/animations";
+
+// Pages
+@import "pages/landing";
+// @import "pages/miner-hub";
+// @import "pages/contact-edit";
+// @import "pages/contact-details";
+// @import "pages/home";
+
+// Atoms
+@import "atoms/avatar";
+@import "atoms/icons";
+@import "cmps/wc-logo";
+
+// Components
+@import "cmps/hero";
+// @import "cmps/block";
+// @import "cmps/user-msg";
+// @import "cmps/key";
+// @import "cmps/send-coins";
+// @import "cmps/contact-filter";
+// @import "cmps/moves";
+// @import "cmps/contacts";
+// @import "cmps/header";
+// @import "cmps/balance";
+// @import "cmps/robot-list";
+// @import "cmps/robot-preview";
+// @import "cmps/robot-filter";
+
+// .main-app {
+//     min-height: 100vh;
+//     display: flex;
+//     flex-direction: column;
+//     .app-header {
+        
+//         background-color: #e91e63;
+//     }
+
+//     main {
+//         flex-grow: 1;
+//     }
+
+//     > footer {
+//         background-color: #111;
+//         color: white;
+//     }
+// }

@@ -1,0 +1,43 @@
+.icons-gallery {
+   display: flex;
+   justify-content: space-between;
+   width: 75%;
+   margin: 0 auto;
+   @media only screen and (max-width: $tablet-breakpoint) {
+      flex-direction: column;
+      width: 100%;
+      .item {
+         margin-block-end: 1em;
+         width: 100%;
+
+         span {
+            border-bottom: 1px rgba(185, 185, 185, 0.075) solid;
+            width: 100%;
+            text-align: center;
+         }
+      }
+   }
+   .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &.safe {
+         color: $success;
+      }
+      &.fast {
+         color: $danger;
+      }
+      &.reliable {
+         color: $blu;
+      }
+      span {
+         padding: 1em 0;
+         font-size: 1.8em;
+      }
+   }
+}
+
+$landingIconSize:clamp(30px,5vw,5rem);
+.landing-icon {
+   width: $landingIconSize;
+}

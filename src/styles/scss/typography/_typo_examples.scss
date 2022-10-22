@@ -1,0 +1,14 @@
+.typo-examples {
+   border: 1px black solid;
+   > * {
+      text-align: center;
+      margin: 0 auto;
+   }
+
+   button {
+      margin: 0 auto;
+      margin-left: 42%;
+      padding: .5em 1em;
+   }
+}
+

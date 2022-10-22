@@ -1,0 +1,49 @@
+.hero-container {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   margin: 7rem auto;
+   height: $heroHeight;
+   // border: 1px black solid;
+   @media only screen and (max-width: $tablet-breakpoint) {
+      flex-direction: column;
+      position: relative;
+      >*{
+         // border: 1px black solid;
+      }
+      .text-style {
+         width: 100%;
+      }
+      .wc-logo {
+         position: absolute;
+         right: 0;
+      }
+   }
+
+   .text-style {
+      flex: 6;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .display-exp{
+         margin-bottom: 2rem;
+         // background-color: orange;
+      }
+      .body{
+         max-width: 55ch;
+      }
+
+      // border: 1px black solid;
+      >*{
+         // border: 1px black solid;
+
+      }
+   }
+
+   .wc-logo {
+      margin: 0 auto;
+      flex: 3;
+      
+      // border: 1px black solid;
+   }
+}

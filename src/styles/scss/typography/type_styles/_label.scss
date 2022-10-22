@@ -1,0 +1,48 @@
+/* ROLE
+   Label styles are smaller, utilitarian styles, used for things
+   like the text inside components or for very small text 
+   in the content body, such as captions. 
+
+   Buttons, for example, use the label large style.
+
+   *Label styles should enable quick reading-
+   at small sizes, such as in buttons.
+   *A music player using label style for the timecode.
+   *A navigation bar using label style for the destination text.
+*/
+
+// l
+$headline-l-lh: 40px;
+$headline-l-fs: 32px;
+$headline-l-w: 400;
+// m
+$headline-m-lh: 36px;
+$headline-m-fs: 28px;
+$headline-m-w: 400;
+// s
+$headline-s-lh: 32px;
+$headline-s-fs: 24px;
+$headline-s-w: 400;
+
+.title {
+   line-height: $headline-m-lh;
+   font-size: $headline-m-fs;
+   font-weight: $headline-m-w;
+}
+
+@mixin headline {
+   line-height: $headline-m-lh;
+   font-size: $headline-m-fs;
+   font-weight: $headline-m-w;
+}
+
+@mixin par {
+   h1 {
+      @include headline;
+   }
+
+   p {
+      color: red;
+      font-size: $body-m-fs;
+   }
+}

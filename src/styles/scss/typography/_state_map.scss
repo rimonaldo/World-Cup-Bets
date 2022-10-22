@@ -1,0 +1,44 @@
+.regular {
+   color: black;
+   .fill{
+      background: black;
+   }
+}
+
+.expressive {
+   color: royalblue;
+   .fill{
+      background: royalblue;
+   }
+}
+
+.formal {
+   color: purple;
+   .fill{
+      background: royalblue;
+   }
+}
+
+
+.state-map {
+   text-align: start;
+   display: flex;
+   width: 100%;
+   border: 1px black solid;
+   label {
+      padding: 0 .5em;
+      color: black;
+      border-right: 1px black solid;
+      width: 20%;
+      line-height: 1.5em;
+
+   }
+   
+   .fill {
+      width: 2em;
+      height: 1em;
+      border: 1px black solid;
+      margin-bottom: 5px;
+   }
+}
+

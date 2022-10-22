@@ -1,0 +1,109 @@
+.landing-page{
+   padding: 0 10vw;
+   @media only screen and (max-width: $tablet-breakpoint) {
+      padding: 0 5vw;
+   
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .landing {
+
+//    .wc-logo{
+//       // position: absolute;
+//       right: 0;
+//    }
+
+
+// }
+
+// .signup-page {
+//    padding: 0 $layout-padding;
+//    z-index: 1;
+
+//    .hero {
+//       font-size: 1.5rem;
+//       @include par;
+//       @media only screen and (max-width: 1000px) {
+//          font-size: 10px;
+//       }
+   
+//    }
+
+//    .btn {
+//       // margin-bottom: 3vw;
+//       width: max(30%, 200px);
+//       line-height: 3.5em;
+//       color: white;
+//       @media only screen and (max-width: $tablet-breakpoint) {
+//          width: 100%;
+//       }
+//    }
+
+//    .galleries {
+//       display: flex;
+//       flex-direction: column;
+//       .app-gallery {
+//          width: 60%;
+//          margin: 0 auto;
+//          display: flex;
+//          flex-wrap: wrap;
+//          justify-content: space-evenly;
+//          gap: 2vw 0;
+//          // margin-bottom: 3em;
+//          .item {
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             flex-basis: 280px;
+//             @media only screen and (min-width: 1360px) {
+//                flex-basis: 350px;
+//             }
+//             span {
+//                padding: 1em 0;
+//                font-size: min(1.5em, 5vw);
+//                color: black;
+//             }
+//          }
+//       }
+//    }
+// }

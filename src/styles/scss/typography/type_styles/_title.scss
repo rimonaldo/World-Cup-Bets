@@ -1,0 +1,49 @@
+/* ROLE
+   Titles are smaller than headline styles, and should be used for 
+   medium-emphasis text that remains relatively short. For example,
+   consider using title styles to divide secondary passages of text
+   or secondary regions of content.
+
+   For titles, use caution when using expressive fonts, including 
+   display, handwritten, and script styles.
+
+   *A news article title using the title style to capture attention.
+   *Top app bar using title style.
+   *Example of title style applied to a category header: Top News.
+*/
+
+// l
+$headline-l-lh: 40px;
+$headline-l-fs: 32px;
+$headline-l-w: 400;
+// m
+$headline-m-lh: 36px;
+$headline-m-fs: 28px;
+$headline-m-w: 400;
+// s
+$headline-s-lh: 32px;
+$headline-s-fs: 24px;
+$headline-s-w: 400;
+
+.title {
+   line-height: $headline-m-lh;
+   font-size: $headline-m-fs;
+   font-weight: $headline-m-w;
+}
+
+@mixin title {
+   line-height: $headline-m-lh;
+   font-size: $headline-m-fs;
+   font-weight: $headline-m-w;
+}
+
+@mixin par {
+   h1 {
+      @include title;
+   }
+
+   p {
+      color: red;
+      font-size: $body-m-fs;
+   }
+}
