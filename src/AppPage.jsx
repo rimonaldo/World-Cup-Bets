@@ -7,7 +7,7 @@ import { ContactDetailsPage } from './pages/contact_/TransferPage'
 import { setLoggedUser } from './store/actions/userActions'
 import { MinerHub } from './pages/MinerHubPage'
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import { LandingPage } from './pages/LandingPage'
+import { LandingPage } from './AppLandingPage'
 import { ContactEdit } from './pages/contact_/EditPage'
 import { connect } from 'react-redux'
 

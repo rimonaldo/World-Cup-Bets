@@ -37,13 +37,3 @@ $headline-s-w: 400;
    font-weight: $headline-m-w;
 }
 
-@mixin par {
-   h1 {
-      @include title;
-   }
-
-   p {
-      color: red;
-      font-size: $body-m-fs;
-   }
-}

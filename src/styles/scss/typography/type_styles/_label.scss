@@ -12,37 +12,34 @@
 */
 
 // l
-$headline-l-lh: 40px;
-$headline-l-fs: 32px;
-$headline-l-w: 400;
+$label-l-lh: 40px;
+$label-l-fs: 32px;
+$label-l-w: 400;
 // m
-$headline-m-lh: 36px;
-$headline-m-fs: 28px;
-$headline-m-w: 400;
+$label-m-lh: 36px;
+$label-m-fs: 28px;
+$label-m-w: 400;
 // s
-$headline-s-lh: 32px;
-$headline-s-fs: 24px;
-$headline-s-w: 400;
+$label-s-lh: 32px;
+$label-s-fs: clamp(8px, 4vw, 1rem);
+$label-s-w: 400;
 
-.title {
-   line-height: $headline-m-lh;
-   font-size: $headline-m-fs;
-   font-weight: $headline-m-w;
+.label {
+   line-height: $label-m-lh;
+   font-size: $label-s-fs;
+   font-weight: $label-m-w;
 }
 
-@mixin headline {
-   line-height: $headline-m-lh;
-   font-size: $headline-m-fs;
-   font-weight: $headline-m-w;
+@mixin label {
+   line-height: $label-m-lh;
+   font-size: $label-m-fs;
+   font-weight: $label-m-w;
 }
 
-@mixin par {
-   h1 {
-      @include headline;
-   }
-
-   p {
-      color: red;
-      font-size: $body-m-fs;
+label{
+   @include label;
+   &.-s{
+      font-size: $label-s-fs;
    }
 }
+

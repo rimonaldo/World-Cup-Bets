@@ -14,24 +14,21 @@
 // l
 $body-l-lh: 24px;
 $body-l-fs: 16px;
-$body-l-w: 100;
+$body-l-w: 300;
 // m
-$body-m-fs: clamp(10px,5vw,1rem);
+$body-m-fs: clamp(6px,5vw,1.2rem);
 $body-m-lh: 1em;
-$body-m-w: 400;
+$body-m-w: 300;
 // s
 $body-s-lh: 16px;
 $body-s-fs: 12px;
-$body-s-w: 400;
+$body-s-w: 300;
 
 @mixin body {
    line-height: $body-m-lh;
    font-size: $body-m-fs;
    font-weight: $body-m-w;
-   
-   max-width: 60%;
-   text-overflow: clip;
-   white-space: wrap;
+
 }
 
 .body {

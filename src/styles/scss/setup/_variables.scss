@@ -30,3 +30,17 @@ $header-height: min(15vw,100px);
 $navHeight: 65px;
 $heroHeight:clamp(50px, 15vw, 300px);
 
+// LAYOUT
+$layoutPadding: min(10vw, 400px);
+$normalPadding: 15vw;
+$smallPadding: 7.5vw;
+$galleryPadding: 9.5vw;
+$headerHeight: 90px;
+$layoutWide: 10em;
+
+// LAYOUT BREAKPOINTS
+$break-hero: 650px;
+$break-mobile: 850px;
+$break-tablet: 900px;
+$break-laptop: 1360px;
+$break-wide: 1920px;

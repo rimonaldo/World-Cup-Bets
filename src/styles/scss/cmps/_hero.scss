@@ -3,19 +3,22 @@
    align-items: center;
    width: 100%;
    margin: 7rem auto;
-   height: $heroHeight;
-   // border: 1px black solid;
+   min-height: $heroHeight;
+   border: 1px rgba(0, 0, 0, 0.041) solid;
+   
    @media only screen and (max-width: $tablet-breakpoint) {
       flex-direction: column;
       position: relative;
-      >*{
-         // border: 1px black solid;
-      }
+      height: max-content;
       .text-style {
          width: 100%;
+         .body {
+            max-width: 70%;
+         }
       }
       .wc-logo {
          position: absolute;
+         top: 5%;
          right: 0;
       }
    }
@@ -25,25 +28,25 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      .display-exp{
-         margin-bottom: 2rem;
-         // background-color: orange;
+      justify-content: space-evenly;
+      .display-exp {
+         color: $clr1;
+         margin-bottom: 1rem;
       }
-      .body{
-         max-width: 55ch;
+      .body {
+         max-width: clamp(15ch,70%,75ch);
+         // max-width: 60%;
+         text-overflow: clip;
+         white-space: wrap;
       }
-
-      // border: 1px black solid;
-      >*{
+      > * {
          // border: 1px black solid;
-
       }
    }
 
    .wc-logo {
       margin: 0 auto;
       flex: 3;
-      
       // border: 1px black solid;
    }
 }

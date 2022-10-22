@@ -1,35 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setLoggedUser } from '../store/actions/userActions'
-import { loadContacts } from '../store/actions/contactActions'
-import TypoExamples from '../components/TypoExamples'
-import Hero from '../components/Hero'
+import { setLoggedUser } from './store/actions/userActions'
+import { loadContacts } from './store/actions/contactActions'
+import TypoExamples from './components/TypoExamples'
+import Hero from './components/Hero'
 export class _LandingPage extends Component {
    render() {
       return (
          <section className="landing-page">
+            {/* IDEA - THIS IS A PARGRAPH TEMPLATE */}
             <Hero />
             <TypoExamples></TypoExamples>
 
-            <div className="signup-page">
-               {/* IDEA - THIS IS A PARGRAPH TEMPLATE */}
 
-               {/* <div className="hero">
-                  <h1>World Cup Bets</h1>
-                  <p>
-                     World Cup Bets takes all your money in promise that you will win more money from it. you are
-                     probably going to lose all of it because you are a mug.
-                  </p>
-               </div> */}
-
-               {/* IDEA - THIS IS A BUTTON-NAME-STATE PATTERN COMPONENT */}
-
-               {/* <button className="button-name-state" onClick={() => this.onStartDemo()}>
-                  Start demo
-               </button> */}
+            {/* <div className="signup-page"> */}
 
                {/* IDEA - THIS SHOULD BECOME A GALLERY TEMPLATE FLEX 3 AND FLEX / GRID OF 4 AND SPREADING DOWN ON NARROW VIEW */}
-               <div className="galleries">
+               {/* <div className="galleries"> */}
                   {/* IDEA - DRY - SOMETIMES KEEP THINGS SIMPLE AND DONT REAPEAT YOURSELF / OVER COMPLECATE  */}
 
                   {/* ICON GALLERY */}
@@ -61,24 +48,19 @@ export class _LandingPage extends Component {
                         <img src="https://i.ibb.co/XX0ZR1q/Image-1.png" alt="" />
                      </div>
                   </div> */}
-               </div>
+               {/* </div> */}
 
-               {/* <div className="logo"></div> */}
-               {/* <span>login</span> */}
-               {/* <br /> */}
                {/* <input placeholder="username" type="text" onChange={ev => this.handleChange(ev)} name="username" /> */}
                {/* <input placeholder="password" type="text" onChange={ev => this.handleChange(ev)} name="password" /> */}
                {/* <button className="button" onClick={() => this.onLogin()}> */}
                   {/* Login */}
                {/* </button> */}
 
-               {/* <span>signup</span> */}
-               {/* <br /> */}
                {/* <input placeholder="username" type="text" onChange={ev => this.handleChange(ev)} name="username" /> */}
                {/* <button className="button" onClick={() => this.onSignup()}> */}
                   {/* Signup */}
                {/* </button> */}
-            </div>
+            {/* </div> */}
 
             
          </section>

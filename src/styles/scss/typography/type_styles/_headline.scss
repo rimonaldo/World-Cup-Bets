@@ -17,8 +17,8 @@ $headline-l-lh: 40px;
 $headline-l-fs: 32px;
 $headline-l-w: 400;
 // m
-$headline-m-lh: 36px;
-$headline-m-fs: 28px;
+$headline-m-fs: clamp(1.2rem, 5vw , 2rem);
+$headline-m-lh: 1em;
 $headline-m-w: 400;
 // s
 $headline-s-lh: 32px;
@@ -35,16 +35,5 @@ $headline-s-w: 400;
     line-height: $headline-m-lh;
     font-size: $headline-m-fs;
     font-weight: $headline-m-w;
- }
- 
- @mixin par {
-    h1 {
-       @include headline;
-    }
- 
-    p {
-       color: red;
-       font-size: $body-m-fs;
-    }
  }
  
