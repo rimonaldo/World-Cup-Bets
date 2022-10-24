@@ -22,3 +22,6 @@ design system -
     - layouts
     - assets
     
+https://m3.material.io/styles/typography/applying-type
+https://readme.so/editor
+https://github.com/rimonaldo/World-Cup-Bets

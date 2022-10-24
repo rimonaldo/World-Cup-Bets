@@ -31,6 +31,16 @@ _______________________________________________________________
     Context is to re-render all children components if the 
     value provided to it as a prop changes.
 
+
+    *Zustand 
+        - Zustand renders components only on changes to the 
+        value of the state. Changes in the state can often be 
+        handled without having to re-render a component.
+        
+        
+        
+        -
+
 3.Server state - 
     What happens when there is a network error? Do I really need 
     to hit my server every time my user visits the home page 

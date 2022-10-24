@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "name": "rimon",
+      "points": "166"
+    },
+    {
+        "id": 2,
+        "name": "iftah",
+        "points": "142"
+      },
+      {
+        "id": 3,
+        "name": "stav",
+        "points": "124"
+      },
+      {
+        "id": 4,
+        "name": "tzach",
+        "points": "114"
+      },
+      {
+        "id": 5,
+        "name": "omerK",
+        "points": "152"
+      },
+      {
+        "id": 6,
+        "name": "omer",
+        "points": "141"
+      },
+      {
+        "id": 7,
+        "name": "omri",
+        "points": "104"
+      },
+      {
+        "id": 8,
+        "name": "tomer",
+        "points": "140"
+      }
+  ]

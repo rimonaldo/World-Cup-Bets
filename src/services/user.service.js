@@ -1,5 +1,5 @@
 import { httpService } from './http.service'
-
+import users from '../data/user.json'
 const STORAGE_KEY = 'loggedUser'
 const LOGGED_KEY = 'loggedUser'
 
@@ -33,7 +33,6 @@ function getUser() {
    })
 }
 
-
 async function getAsyncUser() {
    let user = await httpService.get(`user/${getUser()._id}`)
    user.contacts = user.contacts || []
@@ -66,9 +65,25 @@ async function signupOthers(contacts) {
    })
 }
 
+
+// *IDEA - sort helper funcion
+const glist = users.sort((a, b) => {
+   return b.points - a.points
+})
+
+
 async function getUsers() {
    console.log('getting users')
-   return await httpService.get('user')
+   // need to be in TYPESCRIPT
+   const gUsers = new Promise((resolve, reject) => {
+      const users = glist
+      users ? resolve(users) : reject('Could not get users')
+   })
+   try {
+      return await gUsers
+   } catch (error) {
+      console.error(error)
+   }
 }
 
 async function getById(userId) {
@@ -96,7 +111,7 @@ async function updateUser(user = null, username) {
       const users = await getUsers()
       user = users.find(user => user.username === username)
    }
-   
+
    user = await httpService.put(`user/${user._id}`, user)
    console.log('updating', user)
    if (getLoggedinUser()._id === user._id) _saveLocalUser(user)

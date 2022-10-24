@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { setLoggedUser } from './store/actions/userActions'
-import { loadContacts } from './store/actions/contactActions'
 import TypoExamples from './components/TypoExamples'
 import Hero from './components/Hero'
 import { Link } from 'react-router-dom'
-export class _LandingPage extends Component {
+export class LandingPage extends Component {
    render() {
       return (
          <section className="landing-page">
@@ -116,13 +113,3 @@ export class _LandingPage extends Component {
    // HTML
 }
 
-// REDUX CONFIGORATION
-const mapStateToProps = state => {
-   return {
-      contacts: state.contacts,
-   }
-}
-
-const mapDispatchToProps = { setLoggedUser, loadContacts }
-
-export const LandingPage = connect(mapStateToProps, mapDispatchToProps)(_LandingPage)

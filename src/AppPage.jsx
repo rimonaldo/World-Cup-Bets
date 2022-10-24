@@ -1,27 +1,19 @@
 import { Component } from 'react'
-// import '../styles/scss/global.scss'
-import { AppPage } from './pages/HomePage'
-import { Header } from './components/Organisms/Header'
-import { ContactPage } from './pages/contact_/ListPage'
-import { ContactDetailsPage } from './pages/contact_/TransferPage'
-import { setLoggedUser } from './store/actions/userActions'
-import { MinerHub } from './pages/MinerHubPage'
+// import { Header } from './components/Organisms/Header'
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { LandingPage } from './AppLandingPage'
-import { ContactEdit } from './pages/contact_/EditPage'
-import { connect } from 'react-redux'
 import HomePage from './pages/HomePage'
 const PrivateRoute = props => {
    const user = props.user
    return user ? <Route {...props} /> : <Redirect to="/signup" />
 }
 
-class _PopCoin extends Component {
+export class WCB extends Component {
    render() {
       return (
          <Router>
             <div>
-               <Header />
+               {/* <Header /> */}
                <Switch>
                   <Route path="/landing" component={LandingPage} onSignup={this.onSignup} />
                   <Route path="/" component={HomePage} />
@@ -39,12 +31,3 @@ class _PopCoin extends Component {
       }
    }
 }
-
-// REDUX CONFIGORATION
-const mapStateToProps = state => {
-   return {
-      user: state.userModule.loggedUser,
-   }
-}
-const mapDispatchToProps = { setLoggedUser }
-export const PopCoin = connect(mapStateToProps, mapDispatchToProps)(_PopCoin)
