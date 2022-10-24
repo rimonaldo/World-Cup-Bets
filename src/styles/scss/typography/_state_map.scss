@@ -1,40 +1,17 @@
-.regular {
-   color: black;
-   .fill{
-      background: black;
-   }
-}
-
-.expressive {
-   color: royalblue;
-   .fill{
-      background: royalblue;
-   }
-}
-
-.formal {
-   color: purple;
-   .fill{
-      background: royalblue;
-   }
-}
-
-
 .state-map {
    text-align: start;
    display: flex;
    width: 100%;
    border: 1px black solid;
    label {
-      padding: 0 .5em;
+      padding: 0 0.5em;
       color: black;
       border-right: 1px black solid;
       min-width: 20%;
       width: max-content;
       line-height: 1.5em;
-
    }
-   
+
    .fill {
       width: 2em;
       height: 1em;
@@ -43,3 +20,23 @@
    }
 }
 
+.regular {
+   color: black;
+   .fill {
+      background: black;
+   }
+}
+
+.expressive {
+   color: royalblue;
+   .fill {
+      background: royalblue;
+   }
+}
+
+.formal {
+   color: purple;
+   .fill {
+      background: royalblue;
+   }
+}

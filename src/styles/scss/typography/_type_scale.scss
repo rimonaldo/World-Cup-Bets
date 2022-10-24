@@ -2,16 +2,16 @@
 // DISPLAY
 // __________________________________
 // l
-$display-l-lh: clamp(2rem, 20vw, 5rem);
-$display-l-fs: 57px;
+$display-l-fs: clamp(1.5rem, 7vw, 5rem);
+$display-l-lh: 1em;
 $display-l-w: 400;
 // m
-$display-m-lh: clamp(2.2rem, 25vw, 5.2rem);
-$display-m-fs: clamp(2rem, 20vw, 5rem);
+$display-m-fs: clamp(1.5rem, 7vw, 3.5rem);
+$display-m-lh: 1em;
 $display-m-w: 400;
 // s
+$display-s-fs: clamp(1.5rem, 3vw, 2rem);
 $display-s-lh: 44px;
-$display-s-fs: 36px;
 $display-s-w: 400;
 // __________________________________
 // HEADLINE

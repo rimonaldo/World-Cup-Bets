@@ -4,23 +4,28 @@ import { setLoggedUser } from './store/actions/userActions'
 import { loadContacts } from './store/actions/contactActions'
 import TypoExamples from './components/TypoExamples'
 import Hero from './components/Hero'
+import { Link } from 'react-router-dom'
 export class _LandingPage extends Component {
    render() {
       return (
          <section className="landing-page">
             {/* IDEA - THIS IS A PARGRAPH TEMPLATE */}
             <Hero />
-            <TypoExamples></TypoExamples>
 
+            <Link to={'/'}>
+               <button className="button">Login</button>
+            </Link>
+
+            {/* <TypoExamples></TypoExamples> */}
 
             {/* <div className="signup-page"> */}
 
-               {/* IDEA - THIS SHOULD BECOME A GALLERY TEMPLATE FLEX 3 AND FLEX / GRID OF 4 AND SPREADING DOWN ON NARROW VIEW */}
-               {/* <div className="galleries"> */}
-                  {/* IDEA - DRY - SOMETIMES KEEP THINGS SIMPLE AND DONT REAPEAT YOURSELF / OVER COMPLECATE  */}
+            {/* IDEA - THIS SHOULD BECOME A GALLERY TEMPLATE FLEX 3 AND FLEX / GRID OF 4 AND SPREADING DOWN ON NARROW VIEW */}
+            {/* <div className="galleries"> */}
+            {/* IDEA - DRY - SOMETIMES KEEP THINGS SIMPLE AND DONT REAPEAT YOURSELF / OVER COMPLECATE  */}
 
-                  {/* ICON GALLERY */}
-                  {/* <div className="icons-gallery">
+            {/* ICON GALLERY */}
+            {/* <div className="icons-gallery">
                      <div className="item fast">
                         <img
                            className="landing-icon"
@@ -41,28 +46,24 @@ export class _LandingPage extends Component {
                      </div>
                   </div> */}
 
-                  {/* EXAMPLE - OF THE CURRENT GRID MARKUP */}
-                  {/* <div className="app-gallery">
+            {/* EXAMPLE - OF THE CURRENT GRID MARKUP */}
+            {/* <div className="app-gallery">
                      <div className="item">
                         <span>SHOW CHARTS</span>
                         <img src="https://i.ibb.co/XX0ZR1q/Image-1.png" alt="" />
                      </div>
                   </div> */}
-               {/* </div> */}
-
-               {/* <input placeholder="username" type="text" onChange={ev => this.handleChange(ev)} name="username" /> */}
-               {/* <input placeholder="password" type="text" onChange={ev => this.handleChange(ev)} name="password" /> */}
-               {/* <button className="button" onClick={() => this.onLogin()}> */}
-                  {/* Login */}
-               {/* </button> */}
-
-               {/* <input placeholder="username" type="text" onChange={ev => this.handleChange(ev)} name="username" /> */}
-               {/* <button className="button" onClick={() => this.onSignup()}> */}
-                  {/* Signup */}
-               {/* </button> */}
             {/* </div> */}
 
-            
+            {/* <input placeholder="username" type="text" onChange={ev => this.handleChange(ev)} name="username" /> */}
+            {/* <input placeholder="password" type="text" onChange={ev => this.handleChange(ev)} name="password" /> */}
+
+
+            {/* <input placeholder="username" type="text" onChange={ev => this.handleChange(ev)} name="username" /> */}
+            {/* <button className="button" onClick={() => this.onSignup()}> */}
+            {/* Signup */}
+            {/* </button> */}
+            {/* </div> */}
          </section>
       )
    }
@@ -91,10 +92,12 @@ export class _LandingPage extends Component {
    }
 
    async onLogin() {
-      const { username, password } = this.state
-      if (!username || !password) return
-      const loggedUser = await this.props.setLoggedUser(username, password)
-      if (loggedUser) this.loadApp(loggedUser)
+      this.loadApp()
+
+      // const { username, password } = this.state
+      // if (!username || !password) return
+      // const loggedUser = await this.props.setLoggedUser(username, password)
+      // if (loggedUser) this.loadApp(loggedUser)
    }
 
    async onStartDemo() {

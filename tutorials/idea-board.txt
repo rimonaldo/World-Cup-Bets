@@ -1,0 +1,24 @@
+users - 
+    - auth
+
+leaderboard - 
+    - points system
+
+data - 
+    - WC groups from api
+    - upcoming matches
+    - live match data
+
+homePage - 
+    - tabs
+        - leaderboard
+        - upcoming matches
+        - group tables (tabs aswell maybe)
+        
+
+design system - 
+    - typography
+        - text templates
+    - layouts
+    - assets
+    

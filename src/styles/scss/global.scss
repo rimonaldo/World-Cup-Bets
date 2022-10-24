@@ -23,6 +23,9 @@
 @import "basics/modals";
 @import "basics/animations";
 
+// Layouts
+@import "layouts/main";
+
 // Pages
 @import "pages/landing";
 
@@ -30,8 +33,8 @@
 @import "cmps/wc-logo";
 
 // Components
+@import "cmps/leaderboard";
 @import "cmps/hero";
 
 // Text Tempaltes
 @import "cmps/text_templates/display-body";
-

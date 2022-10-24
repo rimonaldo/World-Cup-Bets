@@ -1,0 +1,24 @@
+.leaderboard {
+   border: 1px black solid;
+   min-width: 30vw;
+   tbody,
+   thead,
+   tfoot,
+   tr {
+      > * {
+         text-align: center;
+         border: 1px rgb(224, 224, 224) solid;
+      }
+   }
+   thead {
+      border: 1px black solid;
+      background-color: $clr1;
+      .title{
+        background-color: whitesmoke;
+        color: $clr1;
+      }
+   }
+
+   tr {
+   }
+}

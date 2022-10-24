@@ -10,7 +10,7 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { LandingPage } from './AppLandingPage'
 import { ContactEdit } from './pages/contact_/EditPage'
 import { connect } from 'react-redux'
-
+import HomePage from './pages/HomePage'
 const PrivateRoute = props => {
    const user = props.user
    return user ? <Route {...props} /> : <Redirect to="/signup" />
@@ -23,7 +23,8 @@ class _PopCoin extends Component {
             <div>
                <Header />
                <Switch>
-                  <Route path="/" component={LandingPage} onSignup={this.onSignup} />
+                  <Route path="/landing" component={LandingPage} onSignup={this.onSignup} />
+                  <Route path="/" component={HomePage} />
                </Switch>
             </div>
          </Router>
