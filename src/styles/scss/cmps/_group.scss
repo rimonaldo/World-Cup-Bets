@@ -1,0 +1,31 @@
+.group {
+   @include list-style-no-dot;
+
+   border: 1px black solid;
+   min-width: 300px;
+
+   tr {
+      // display: flex;
+
+      >*{
+      //   flex: 1;
+        // text-align: center;
+        border: 1px  red solid;
+      //   display: flex;
+      //   justify-content: flex-start;
+      width: 1rem;
+      }
+   }
+
+   .place{
+    
+   }
+
+
+   .team{
+      width: 100px;
+   }
+
+
+
+}

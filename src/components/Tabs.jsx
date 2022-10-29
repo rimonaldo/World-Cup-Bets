@@ -1,12 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function tabs(props) {
-
+export default function tabs({ tabs, baseUrl }) {
    return (
       <div className="tabs">
-         <button onClick={ev => props.func(ev)} name="leaderboard">Leaderboard</button>
-         <button onClick={ev => props.func(ev)} name="upcoming">Upcoming</button>
-         <button onClick={ev => props.func(ev)} name="tournament">Tournament</button>
+         {tabs.map(tab => {
+            const tabName = tab.split('')[0].toUpperCase() + tab.slice(1, tab.length)
+            return (
+               <Link to={`${baseUrl}/${tab}`}>
+                  <button className='tab' name={tabName}> {tabName}</button>
+               </Link>
+            )
+         })}
       </div>
    )
 }

@@ -9,7 +9,7 @@ export class LandingPage extends Component {
             {/* IDEA - THIS IS A PARGRAPH TEMPLATE */}
             <Hero />
 
-            <Link to={'/'}>
+            <Link to={'/home/leaderboard'}>
                <button className="button">Login</button>
             </Link>
 

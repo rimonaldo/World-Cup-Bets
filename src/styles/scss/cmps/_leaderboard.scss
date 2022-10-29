@@ -1,6 +1,8 @@
-.leaderboard {
+.table {
    border: 1px black solid;
-   min-width: 30vw;
+   width: 100%;
+   max-width: 700px;
+   margin: 0 auto;
    tbody,
    thead,
    tfoot,

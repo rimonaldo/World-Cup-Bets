@@ -1,5 +1,6 @@
 import create from 'zustand'
 import { userService } from '../services/user.service'
+import { tournamentService } from '../services/tournament.service'
 // define the store
 const useStore = create(set => ({
    votes: 0,
@@ -7,6 +8,10 @@ const useStore = create(set => ({
    subtractVotes: () => set(state => ({ votes: state.votes - 1 })),
    users: [],
    setUsers: async () => set({ users: await userService.getUsers() }),
+   
+   teams: [],
+   setTeams: async () => set({ teams: await tournamentService.getTeams() }),
+   
 
    fruits: ['apple', 'banana', 'orange'],
    addFruits: fruit => {
@@ -14,6 +19,10 @@ const useStore = create(set => ({
          fruits: [...state.fruits, fruit],
       }))
    },
+
+
+
+
 }))
 
 export default useStore

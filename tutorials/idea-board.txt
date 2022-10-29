@@ -4,6 +4,10 @@ users -
 leaderboard - 
     - points system
 
+Tournament - 
+    - tables
+    - Knoockout
+
 data - 
     - WC groups from api
     - upcoming matches
@@ -25,3 +29,23 @@ design system -
 https://m3.material.io/styles/typography/applying-type
 https://readme.so/editor
 https://github.com/rimonaldo/World-Cup-Bets
+https://github.com/raminmr/free-api-worldcup2022
+
+structor - Tournament
+    - ux
+        - points
+        - group stage 
+            one game a day
+                - score =  50 pts
+                - goals = 25 pts
+                - corners o/u 5 pts
+                - 
+
+    - table 
+        - form 
+            avg of last games emoticon
+    
+    - teams
+        - upcoming  
+        
+    
