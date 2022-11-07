@@ -20,8 +20,8 @@ $label-m-lh: 36px;
 $label-m-fs: 28px;
 $label-m-w: 400;
 // s
-$label-s-lh: 32px;
-$label-s-fs: clamp(8px, 4vw, 1rem);
+$label-s-lh: 1rem;
+$label-s-fs: clamp(8px, 4vw, .8rem);
 $label-s-w: 400;
 
 .label {

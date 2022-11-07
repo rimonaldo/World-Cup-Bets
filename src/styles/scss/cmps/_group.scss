@@ -1,31 +1,71 @@
-.group {
-   @include list-style-no-dot;
+table {
+   
+   &.group {
+      @include list-style-no-dot;
+      margin: 0 auto;
+      width: 90%;
+      caption{
+         font-size: 1rem;
+         text-align: start;
+         margin-inline-start: 2.5rem;
+         font-weight: 600;
+         color: $clr1
+         ;
+      }
 
-   border: 1px black solid;
-   min-width: 300px;
-
-   tr {
-      // display: flex;
-
-      >*{
-      //   flex: 1;
-        // text-align: center;
-        border: 1px  red solid;
-      //   display: flex;
-      //   justify-content: flex-start;
-      width: 1rem;
+      tbody,
+      thead,
+      tfoot,
+      tr {
+         > * {
+            border-bottom: 2px rgba(224, 224, 224, 0.245) solid;
+            text-align: center;
+         }
+      }
+      
+      td {
+         min-width: 1.8rem;
+         line-height: 1.9rem;
+      }
+      
+      .team {
+         min-width: clamp(150px,10vw,200px);
+         display: flex;
+         align-items: center;
+         .flag-container {
+            width: 30px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-inline-end: .5rem;
+            .flag {
+               border: 1px rgb(219, 219, 219) solid;
+               object-fit: fill;
+               object-position: center;
+               border-radius: 3px;
+               width: 75%;
+               height: 75%;
+            }
+         }
       }
    }
+}
 
-   .place{
-    
+
+.flag-container {
+   width: 30px;
+   height: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-inline-end: .5rem;
+   .flag {
+      border: 1px rgb(219, 219, 219) solid;
+      object-fit: fill;
+      object-position: center;
+      border-radius: 3px;
+      width: 75%;
+      height: 75%;
    }
-
-
-   .team{
-      width: 100px;
-   }
-
-
-
 }

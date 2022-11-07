@@ -1,0 +1,60 @@
+.mini-match-container {
+   border: 1px rgb(211, 211, 211) solid;
+   width: 90%;
+   margin: 0 auto;
+   padding: 0.5rem 1rem;
+   margin-bottom: 1rem;
+
+   .match-details {
+      margin: 1rem 0;
+      line-height: 1.5em;
+      display: flex;
+      justify-content: space-between;
+      .teams {
+         border-right: 1px rgb(221, 221, 221) solid;
+         width: 65%;
+         .team {
+            display: flex;
+            align-items: center;
+            position: relative;
+            .score {
+               position: absolute;
+               right: 0.5em;
+               button {
+                  all: unset;
+                  border: 1px black solid;
+                  cursor: pointer;
+                  font-size: .8em;
+                  margin: 0 5px;
+               }
+            }
+         }
+      }
+   }
+
+   .probability-container {
+      .team-names {
+         display: flex;
+         justify-content: space-between;
+         margin-bottom: 5px;
+         .name {
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.5em;
+            div {
+               font-size: 16px;
+            }
+         }
+      }
+
+      .chart {
+         height: 10px;
+         display: flex;
+
+         .draw {
+            background-color: rgb(226, 226, 226);
+            flex: 1;
+         }
+      }
+   }
+}

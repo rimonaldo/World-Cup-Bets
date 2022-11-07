@@ -1,17 +1,67 @@
 import React, { Component } from 'react'
-import TypoExamples from './components/TypoExamples'
-import Hero from './components/Hero'
+// import TypoExamples from '../components/examples/TypoExamples'
+import Hero from '../components/hero/Hero'
 import { Link } from 'react-router-dom'
 export class LandingPage extends Component {
+   state = {
+      username: '',
+      password: '123',
+   }
+   componentDidMount() {}
+
+   // ON INPUT CHANGE SET USER NAME
+   async handleChange({ target }) {
+      const field = target.name
+      const value = target.type === 'number' ? +target.value || '' : target.value
+      this.setState(prevState => ({
+         [field]: value,
+      }))
+   }
+
+   // DISPATCH SET LOGGED USER
+   async onSignup() {
+      const name = this.state.username
+      if (!name) return
+      const loggedUser = await this.props.setLoggedUser(name)
+      if (loggedUser) this.loadApp(loggedUser)
+   }
+
+   async onLogin() {
+      // this.loadApp()
+
+      const { username, password } = this.state
+      if (!username || !password) return
+      const loggedUser = await this.props.setLoggedUser(username, password)
+      if (loggedUser) this.loadApp(loggedUser)
+   }
+
+   loadApp(loggedUser) {
+      if (loggedUser) {
+         this.props.loadContacts()
+         this.props.history.push('/home/leaderboard')
+      }
+   }
+   // HTML
    render() {
       return (
          <section className="landing-page">
             {/* IDEA - THIS IS A PARGRAPH TEMPLATE */}
             <Hero />
-
+            {/* 
             <Link to={'/home/leaderboard'}>
                <button className="button">Login</button>
-            </Link>
+            </Link> */}
+
+            <input placeholder="username" type="text" onChange={ev => this.handleChange(ev)} name="username" />
+            <input placeholder="password" type="text" onChange={ev => this.handleChange(ev)} name="password" />
+            <button className="button" onClick={() => this.onLogin()}>
+               Login
+            </button>
+            <br />
+            <input placeholder="username" type="text" onChange={ev => this.handleChange(ev)} name="username" />
+            <button className="button" onClick={() => this.onSignup()}>
+               Signup
+            </button>
 
             {/* <TypoExamples></TypoExamples> */}
 
@@ -52,64 +102,8 @@ export class LandingPage extends Component {
                   </div> */}
             {/* </div> */}
 
-            {/* <input placeholder="username" type="text" onChange={ev => this.handleChange(ev)} name="username" /> */}
-            {/* <input placeholder="password" type="text" onChange={ev => this.handleChange(ev)} name="password" /> */}
-
-
-            {/* <input placeholder="username" type="text" onChange={ev => this.handleChange(ev)} name="username" /> */}
-            {/* <button className="button" onClick={() => this.onSignup()}> */}
-            {/* Signup */}
-            {/* </button> */}
             {/* </div> */}
          </section>
       )
    }
-
-   state = {
-      username: '',
-      password: '123',
-   }
-   componentDidMount() {}
-
-   // ON INPUT CHANGE SET USER NAME
-   async handleChange({ target }) {
-      const field = target.name
-      const value = target.type === 'number' ? +target.value || '' : target.value
-      this.setState(prevState => ({
-         [field]: value,
-      }))
-   }
-
-   // DISPATCH SET LOGGED USER
-   async onSignup() {
-      const name = this.state.username
-      if (!name) return
-      const loggedUser = await this.props.setLoggedUser(name)
-      if (loggedUser) this.loadApp(loggedUser)
-   }
-
-   async onLogin() {
-      this.loadApp()
-
-      // const { username, password } = this.state
-      // if (!username || !password) return
-      // const loggedUser = await this.props.setLoggedUser(username, password)
-      // if (loggedUser) this.loadApp(loggedUser)
-   }
-
-   async onStartDemo() {
-      const username = 'Employer'
-      const password = '123'
-      const loggedUser = await this.props.setLoggedUser(username, password)
-      if (loggedUser) this.loadApp(loggedUser)
-   }
-
-   loadApp(loggedUser) {
-      if (loggedUser) {
-         this.props.loadContacts()
-         this.props.history.push('/')
-      }
-   }
-   // HTML
 }
-

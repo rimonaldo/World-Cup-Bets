@@ -1,7 +1,8 @@
 import { Component } from 'react'
 // import { Header } from './components/Organisms/Header'
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import { LandingPage } from './AppLandingPage'
+import { LandingPage } from './pages/AppLandingPage'
+import AppLanding from './pages/AppLanding'
 import HomePage from './pages/HomePage'
 const PrivateRoute = props => {
    const user = props.user
@@ -13,9 +14,8 @@ export class WCB extends Component {
       return (
          <Router>
             <div>
-               {/* <Header /> */}
                <Switch>
-                  <Route path="/landing" component={LandingPage} onSignup={this.onSignup} />
+                  <Route path="/landing" component={AppLanding} onSignup={this.onSignup} />
                   <Route path="/" component={HomePage} />
                </Switch>
             </div>

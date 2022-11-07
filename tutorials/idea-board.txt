@@ -3,6 +3,11 @@ users -
 
 leaderboard - 
     - points system
+        - direction - 5
+        - score - 15
+        - scorer - costs 10 - win 50
+        - group qualifaiers - 5 each
+
 
 Tournament - 
     - tables
@@ -25,11 +30,6 @@ design system -
         - text templates
     - layouts
     - assets
-    
-https://m3.material.io/styles/typography/applying-type
-https://readme.so/editor
-https://github.com/rimonaldo/World-Cup-Bets
-https://github.com/raminmr/free-api-worldcup2022
 
 structor - Tournament
     - ux
@@ -49,3 +49,8 @@ structor - Tournament
         - upcoming  
         
     
+https://m3.material.io/styles/typography/applying-type
+https://readme.so/editor
+https://github.com/rimonaldo/World-Cup-Bets
+https://github.com/raminmr/free-api-worldcup2022
+

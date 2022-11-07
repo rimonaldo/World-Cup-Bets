@@ -15,6 +15,7 @@ export const userService = {
    _saveLocalUser,
    signupOthers,
    getAsyncUser,
+   getLoggedUser
 }
 
 const gUser = {
@@ -73,14 +74,16 @@ const glist = users.sort((a, b) => {
 
 
 async function getUsers() {
-   console.log('getting users')
+   // console.log('getting users')
    // need to be in TYPESCRIPT
    const gUsers = new Promise((resolve, reject) => {
       const users = glist
       users ? resolve(users) : reject('Could not get users')
    })
    try {
-      return await gUsers
+      const users = await httpService.get(`user/`)
+      console.log(users);
+      return await httpService.get(`user/`) || await gUsers
    } catch (error) {
       console.error(error)
    }
@@ -114,10 +117,10 @@ async function updateUser(user = null, username) {
 
    user = await httpService.put(`user/${user._id}`, user)
    console.log('updating', user)
-   if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
+   if (getLoggedUser()._id === user._id) _saveLocalUser(user)
    return user
 }
-function getLoggedinUser() {
+function getLoggedUser() {
    return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || 'null')
 }
 

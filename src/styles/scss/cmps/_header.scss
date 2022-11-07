@@ -1,62 +1,26 @@
 .header {
-   justify-content: space-between;
-   z-index: 1;
-   height: $header-height;
-   display: flex;
-   align-items: center;
-   padding: 0 $layout-padding;
-   @media only screen and (min-width: $wide-breakpoint) {
-      padding: 0 $large-padding;
-   }
-   color: $clr5;
-   a {
-      font-size: min(5vw,1.7em);
-   }
-
-   .logo{
-      width: 1.1em;
-      height: 1.1em;
-      background-position: center;
-      background-size: cover;
-      margin-inline-end: 2em;
-   }
-
-   .login{
-      &::before{
-         content: '\f007';
-      }
-   }
-
-   .right{
+   background-color: $clr2;
+   margin: 0 auto;
+   padding: 0 $layoutPadding;
+   .tabs {
+      width: 100%;
       display: flex;
+      justify-content: space-around;
+   }
+   button {
+      background-color: rgba(255, 255, 255, 0);
+      border: none;
+      color: white;
+
+
    }
 
-   .links {
-      display: flex;
-      justify-content: space-between;
-      // border-top: 1px $clr1 solid;
-      // border-left: 1px $clr1 solid;
-      width: 10em;
-   }
-   .contacts-link {
-      &::before {
-         content: '\f0c0';
-         margin-inline-end: 5px;
-         cursor: pointer;
+   a{
+      color: white;
+      &.active{
+         border-bottom: 1px red solid;
       }
-   }
 
-   .miner-hub-link {
-      &::before {
-         content: '\f85e';
-      }
-   }
-
-   .key-menu {
-      font-size: min(5vw,1.7em);
-      position: relative;
-      &::before {
-         content: '\f084';
-      }
+      margin-bottom: .8rem;
    }
 }

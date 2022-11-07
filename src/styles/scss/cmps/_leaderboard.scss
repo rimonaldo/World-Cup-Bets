@@ -1,26 +1,27 @@
-.table {
-   border: 1px black solid;
-   width: 100%;
-   max-width: 700px;
-   margin: 0 auto;
-   tbody,
-   thead,
-   tfoot,
-   tr {
-      > * {
-         text-align: center;
-         border: 1px rgb(224, 224, 224) solid;
-      }
-   }
-   thead {
+.leaderboard {
+   .table {
+      width: min(700px,100%);
+      margin: 0 auto;
       border: 1px black solid;
-      background-color: $clr1;
-      .title{
-        background-color: whitesmoke;
-        color: $clr1;
+      tbody,
+      thead,
+      tfoot,
+      tr {
+         > * {
+            text-align: center;
+            border: 1px rgb(224, 224, 224) solid;
+         }
       }
-   }
-
-   tr {
+      thead {
+         border: 1px black solid;
+         background-color: $clr1;
+         .title{
+           background-color: whitesmoke;
+           color: $clr1;
+         }
+      }
+   
+      tr {
+      }
    }
 }
