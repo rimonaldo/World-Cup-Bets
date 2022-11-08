@@ -13,8 +13,6 @@ export default function Header() {
             </Link>
          </Router>
          <Tabs tabs={tabs} baseUrl={'/home'} typeClass={'label'} />
-
-         {/* <AuthForm></AuthForm> */}
       </section>
    )
 }

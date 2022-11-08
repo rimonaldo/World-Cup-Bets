@@ -4,7 +4,7 @@ export default function Avatar() {
    const loggedUser = useStore(state => state.loggedUser)
    return (
       <div className="avatar-container">
-         <div className="avatar">{loggedUser.username.charAt(0).toUpperCase()}</div>
+         {loggedUser ? <div className="avatar">{loggedUser.username.charAt(0).toUpperCase()}</div> : ''}
       </div>
    )
 }

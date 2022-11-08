@@ -30,6 +30,8 @@ export default function AuthForm(props) {
             <input placeholder="password" type="text" onChange={ev => handleChange(ev)} name="password" />
             <button className="button">{modalState.method}</button>
          </form>
+
+         
       </div>
    )
 }

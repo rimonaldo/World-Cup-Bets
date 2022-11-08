@@ -27,10 +27,9 @@ const useStore = create(set => ({
    login: async credentials => set({ loggedUser: await userService.login(credentials) }),
    signup: async credentials => set({ loggedUser: await userService.signup(credentials) }),
 
-   modalState:{style:{'display':''},method:'signup'},
-   showModal: (method) => set ({modalState: {style:{'display':''},method}}),
-   hideModal: () => set ({modalState: {style:{'display':'none'}}}),
-   // setModalState: (modalState) => set ({modalState: {'display':modalState}}),
+   modalState:{style:{'display':'none'},method:'signup',isModal:false},
+   showModal: (method) => set ({modalState: {style:{'display':''},method,isModal:true}}),
+   hideModal: () => set ({modalState: {style:{'display':'none'},isModal:false}}),
 
    fruits: ['apple', 'banana', 'orange'],
    addFruits: fruit => {
