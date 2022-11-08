@@ -11,11 +11,14 @@
    right: 0;
 
    background-color: $clr5;
+   filter: blur(0px);
+   z-index: 1;
     h2{
         text-align: center;
         margin: 0 auto;
     }
    .auth {
+    
       display: flex;
       flex-direction: column;
       justify-content: space-between;

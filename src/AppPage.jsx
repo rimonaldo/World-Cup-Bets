@@ -17,8 +17,8 @@ export class WCB extends Component {
 
    render() {
       return (
-         <Router>
-            <div>
+         <Router >
+            <div >
                <Switch>
                   <Route path="/landing" component={LandingPage} onSignup={this.onSignup} />
                   <Route path="/" component={HomePage} />

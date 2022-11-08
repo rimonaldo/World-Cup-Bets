@@ -2,20 +2,10 @@ import React, { useEffect } from 'react'
 import Hero from '../components/hero/Hero'
 import useStore from '../store/useStore'
 import Header from '../components/header/HeaderLanding'
+import AuthForm from '../components/AuthForm'
 export default function AppLanding(props) {
-   const credentials = {
-      username: '',
-      password: '123',
-   }
    const loggedUser = useStore(state => state.loggedUser)
-   const setLogin = useStore(state => state.login)
-   const setSignup = useStore(state => state.signup)
 
-   function handleChange({ target }) {
-      const field = target.name
-      const value = target.type === 'number' ? +target.value || '' : target.value
-      credentials[field] = value
-   }
    useEffect(() => {
       function load() {
          if (loggedUser.username === 'rimonaldo') {
@@ -24,44 +14,23 @@ export default function AppLanding(props) {
       }
    }, [])
 
-   // useEffect()
-   // DISPATCH SET LOGGED USER
-   function onSignup() {
-      setSignup(credentials)
-      loadApp()
-   }
-
-   function onLogin() {
-      setLogin(credentials)
-      loadApp()
-   }
 
    function loadApp() {
       console.log('load')
-      if (loggedUser.username) {
-         props.history.push('/home/leaderboard')
-      }
+      // if (loggedUser.username) {
+      //    props.history.push('/home/leaderboard')
+      // }else{
+      //    console.log('login first');
+      // }
    }
+
    return (
       <section className="">
          <Header></Header>
          <Hero></Hero>
          {loggedUser ? loggedUser.username || loggedUser.name : 'no logged user'}
          <br />
-
-         {/* <form className='auth login'>
-            <input placeholder="username" type="text" onChange={ev => handleChange(ev)} name="username" />
-            <input placeholder="password" type="text" onChange={ev => handleChange(ev)} name="password" />
-         </form> */}
-
-         {/* <button className="button" onClick={() => onLogin()}>
-            Login
-         </button>
-         <br />
-         <input placeholder="username" type="text" onChange={ev => handleChange(ev)} name="username" />
-         <button className="button" onClick={() => onSignup()}>
-            Signup
-         </button> */}
+         <AuthForm loadApp={loadApp}/>
       </section>
    )
 }

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import useStore from '../store/useStore'
 export default function AuthForm(props) {
+   const {loadApp} = props 
+   const modalState = useStore(state => state.modalState)
    const credentials = {
       username: '',
       password: '123',
@@ -14,28 +16,19 @@ export default function AuthForm(props) {
       const value = target.type === 'number' ? +target.value || '' : target.value
       credentials[field] = value
    }
-   function onSignup() {
-      setSignup(credentials)
-      //   loadApp()
-   }
-   function onLogin(ev) {
+
+   function onAuth(ev) {
       ev.preventDefault()
-      setLogin(credentials)
-      //   loadApp()
+      modalState.method === 'login' ? setLogin(credentials) : setSignup(credentials)
+      loadApp()
    }
 
-   function loadApp() {
-      console.log('load')
-      if (loggedUser.username) {
-         props.history.push('/home/leaderboard')
-      }
-   }
    return (
-      <div className="form-container">
-         <form className="auth login" onSubmit={ev => onLogin(ev)}>
+      <div onClick={ev => ev.stopPropagation()} className="form-container" style={modalState.style}>
+         <form className="auth login " onSubmit={(ev) => onAuth(ev)}>
             <input placeholder="username" type="text" onChange={ev => handleChange(ev)} name="username" />
             <input placeholder="password" type="text" onChange={ev => handleChange(ev)} name="password" />
-            <button className="button">Login</button>
+            <button className="button">{modalState.method}</button>
          </form>
       </div>
    )
