@@ -1,7 +1,10 @@
 import React from 'react'
-
+import useStore from '../../store/useStore'
 export default function Avatar() {
-  return (
-    <div>Avatar</div>
-  )
+   const loggedUser = useStore(state => state.loggedUser)
+   return (
+      <div className="avatar-container">
+         <div className="avatar">{loggedUser.username.charAt(0).toUpperCase()}</div>
+      </div>
+   )
 }

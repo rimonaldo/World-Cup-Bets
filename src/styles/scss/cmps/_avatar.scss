@@ -1,0 +1,20 @@
+.avatar-container {
+   width: 2.5rem;
+   height: 2.5rem;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-image: url('https://www.portmelbournefc.com.au/wp-content/uploads/2022/03/avatar-1.jpeg');
+   background-position: center;
+   background-size: cover;
+   .avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      bottom: 4px;
+      color: $clr1;
+      cursor:context-menu;
+   }
+}

@@ -2,8 +2,8 @@
    background-color: $clr2;
    margin: 0 auto;
    padding: 0 $layoutPadding;
-   // display: flex;
-   // align-items: center;
+   display: flex;
+   align-items: center;
    .tabs {
       width: 100%;
       display: flex;
@@ -13,18 +13,22 @@
       background-color: rgba(255, 255, 255, 0);
       border: none;
       color: white;
-
-
    }
 
-   a{
+   a, button {
       color: white;
-      &.active{
+      &.active {
          border-bottom: 1px red solid;
       }
+      margin: 0.8rem 0;
+   }
 
-      margin-bottom: .8rem;
+   &.landing-header{
+      display: flex;
+      justify-content: space-between;
+      
+      button{
+         margin-inline-start: 1rem;
+      }
    }
 }
-
-
