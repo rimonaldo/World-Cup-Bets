@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Hero from '../components/hero/Hero'
 import useStore from '../store/useStore'
-
+import Header from '../components/header/HeaderLanding'
 export default function AppLanding(props) {
    const credentials = {
       username: '',
@@ -43,20 +43,25 @@ export default function AppLanding(props) {
       }
    }
    return (
-      <section className="landing-page">
+      <section className="">
+         <Header></Header>
          <Hero></Hero>
          {loggedUser ? loggedUser.username || loggedUser.name : 'no logged user'}
          <br />
-         <input placeholder="username" type="text" onChange={ev => handleChange(ev)} name="username" />
-         <input placeholder="password" type="text" onChange={ev => handleChange(ev)} name="password" />
-         <button className="button" onClick={() => onLogin()}>
+
+         {/* <form className='auth login'>
+            <input placeholder="username" type="text" onChange={ev => handleChange(ev)} name="username" />
+            <input placeholder="password" type="text" onChange={ev => handleChange(ev)} name="password" />
+         </form> */}
+
+         {/* <button className="button" onClick={() => onLogin()}>
             Login
          </button>
          <br />
          <input placeholder="username" type="text" onChange={ev => handleChange(ev)} name="username" />
          <button className="button" onClick={() => onSignup()}>
             Signup
-         </button>
+         </button> */}
       </section>
    )
 }

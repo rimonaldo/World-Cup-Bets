@@ -3,9 +3,9 @@ import Leaderboard from '../components/leaderboard/Leaderboard'
 import { Link } from 'react-router-dom'
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Tournament from '../components/tournament/Tournament'
-import Upcoming from './MatchList'
+import Upcoming from '../components/tournament/MatchList'
 import useStore from '../store/useStore'
-import Header from '../components/header/Header'
+import Header from '../components/header/HeaderMain'
 export default function HomePage() {
    const setUsers = useStore(state => state.setUsers)
    useEffect(() => {

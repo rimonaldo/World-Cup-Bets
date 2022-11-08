@@ -1,7 +1,7 @@
 import React from 'react'
-import useStore from '../store/useStore'
-import Match from '../components/tournament/MatchCmp'
-import { tournamentService } from '../services/tournament.service'
+import useStore from '../../store/useStore'
+import Match from './MatchCmp'
+import { tournamentService } from '../../services/tournament.service'
 export default function MatchList() {
    const matches = useStore(state => state.matches)
    const setTeam = useStore(state => state.setTeam)

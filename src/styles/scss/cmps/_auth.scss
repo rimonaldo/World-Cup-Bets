@@ -1,0 +1,36 @@
+.form-container {
+   top: 30vh;
+   width: 300px;
+   display: flex;
+   border: 1px black solid;
+
+   position: absolute;
+   margin-left: auto;
+   margin-right: auto;
+   left: 0;
+   right: 0;
+
+   background-color: $clr5;
+    h2{
+        text-align: center;
+        margin: 0 auto;
+    }
+   .auth {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 1em auto;
+      gap: 1em;
+      input{
+        border: 1px rgb(219, 219, 219) solid;
+        &::placeholder{
+            font-size: .8rem;
+            padding-left: 1em;
+        }
+      }
+      button{
+        background-color: $clr3;
+        line-height: 2em;
+      }
+   }
+}

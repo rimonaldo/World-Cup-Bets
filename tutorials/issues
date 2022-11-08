@@ -6,8 +6,12 @@ how to face issues
 
 * need to manage work flow
     - pick feature
-    # raise git issue
-        - simple issue template 
-    - git checkout to relevant branch
-        - upstream progress
-    - git merge request
+        # raise git issue
+            - simple issue template 
+        - git main
+            - git branch new-branch
+                - git push --set upstream origin new-branch
+            - git checkout main
+            - git merge new-branch
+
+
