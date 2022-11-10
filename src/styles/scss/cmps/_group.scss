@@ -32,6 +32,9 @@ table {
          min-width: clamp(150px,10vw,200px);
          display: flex;
          align-items: center;
+         .qual{
+            color: red;
+         }
          .flag-container {
             width: 30px;
             height: 20px;

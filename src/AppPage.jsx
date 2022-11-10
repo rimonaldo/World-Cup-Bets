@@ -9,15 +9,17 @@ const PrivateRoute = props => {
    return user ? <Route {...props} /> : <Redirect to="/signup" />
 }
 export default function AppPage() {
-   const setHideModal = useStore(state => state.hideModal)
    const modalState = useStore(state => state.modalState)
+   const setHideModal = useStore(state => state.hideModal)
    function hideModal(ev) {
       ev.stopPropagation()
       setHideModal()
+      
    }
    return (
       <Router>
          <AuthForm></AuthForm>
+         
          <div className={modalState.isModal ? 'screen blur' : 'screen'} onClick={(ev) => hideModal(ev)}> 
             <Switch>
                <Route path="/landing" component={LandingPage}/>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Leaderboard from '../components/leaderboard/Leaderboard'
 import { Link } from 'react-router-dom'
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import Tournament from '../components/tournament/Tournament'
+import GroupList from '../components/tournament/GroupList'
 import Upcoming from '../components/tournament/MatchList'
 import useStore from '../store/useStore'
 import Header from '../components/header/HeaderMain'
@@ -31,7 +31,7 @@ export default function HomePage() {
                {/* local data */}
                <Route path="/home/leaderboard" component={() => <Leaderboard />} />
                {/* server data */}
-               <Route path="/home/groups" component={Tournament} />
+               <Route path="/home/groups" component={GroupList} />
                {/* server data */}
                <Route path="/home/matches" component={Upcoming} />
             </Switch>

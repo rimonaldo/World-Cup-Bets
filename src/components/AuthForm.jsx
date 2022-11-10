@@ -1,7 +1,11 @@
 import React, { useRef } from 'react'
 import useStore from '../store/useStore'
+import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 export default function AuthForm(props) {
-   const {loadApp} = props 
+   const setHideModal = useStore(state => state.hideModal)
+
+   const { loadApp } = props
    const modalState = useStore(state => state.modalState)
    const credentials = {
       username: '',
@@ -20,18 +24,18 @@ export default function AuthForm(props) {
    function onAuth(ev) {
       ev.preventDefault()
       modalState.method === 'login' ? setLogin(credentials) : setSignup(credentials)
-      loadApp()
+      setHideModal()
+      console.log('hide');
+      
    }
 
    return (
       <div onClick={ev => ev.stopPropagation()} className="form-container" style={modalState.style}>
-         <form className="auth login " onSubmit={(ev) => onAuth(ev)}>
+         <form className="auth login " onSubmit={ev => onAuth(ev)}>
             <input placeholder="username" type="text" onChange={ev => handleChange(ev)} name="username" />
             <input placeholder="password" type="text" onChange={ev => handleChange(ev)} name="password" />
             <button className="button">{modalState.method}</button>
          </form>
-
-         
       </div>
    )
 }

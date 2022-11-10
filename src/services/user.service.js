@@ -15,7 +15,8 @@ export const userService = {
    _saveLocalUser,
    signupOthers,
    getAsyncUser,
-   getLoggedUser
+   getLoggedUser,
+   setGroupLeader
 }
 
 const gUser = {
@@ -120,6 +121,15 @@ async function updateUser(user = null, username) {
    if (getLoggedUser()._id === user._id) _saveLocalUser(user)
    return user
 }
+
+async function setGroupLeader(bet){
+   console.log(bet);
+   console.log('setting group leader')
+   await httpService.put(`bet/groupLeader`, bet)
+   return {}
+}
+
+
 function getLoggedUser() {
    return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || 'null')
 }
@@ -128,3 +138,4 @@ function _saveLocalUser(user) {
    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
    return user
 }
+

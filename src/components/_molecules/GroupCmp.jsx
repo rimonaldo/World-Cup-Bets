@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { tournamentService } from '../../services/tournament.service'
+import useStore from '../../store/useStore'
+import useUserStore from '../../store/useUserStore'
 export default function GroupTable({ group }) {
+   // const [groupQuals, setGroupQuals] = useState({})
+   const user = useUserStore(state => state.loggedUser)
+   const setGroupLeader = useUserStore(state => state.setGroupLeader)
+
    async function selectQual({ target }) {
       const teamName = target.innerText
       const team = await tournamentService.getTeamByName(teamName)
-      const group = team.groups
-      console.log(group);
+      const group = team.groups.toLowerCase()
+      let groupQuals = { [group]: teamName }
+      // setGroupQuals({ ...groupQuals, [group]: teamName })
+      const userId = user._id
+      const bet = {'groupLeader':{[userId]:{group, team:{teamName,teamId:team.id}}}}
+      // const betPrototype = {'betType':{[userId]:{'betData'}}}
+      await setGroupLeader(bet)
+      // document.querySelector('#'+updatedGroupQuals[group][1]).classList.add('qual')
+      // document.querySelector('#'+updatedGroupQuals[group][0]).classList.toggle('qual')
    }
    return (
       <>
@@ -33,7 +46,9 @@ export default function GroupTable({ group }) {
                               <div className="flag-container">
                                  <img className="flag" src={team.flag} alt="" />
                               </div>
-                              <span onClick={ev => selectQual(ev)}>{team.name_en}</span>
+                              <span className="" id={team.name_en} onClick={ev => selectQual(ev)}>
+                                 {team.name_en}
+                              </span>
                            </td>
                            <td>0</td>
                            <td>0</td>

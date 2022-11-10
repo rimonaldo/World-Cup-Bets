@@ -18,7 +18,6 @@ export default function MatchList() {
    }
    return (
       <div className="matches">
-         {/* <button onClick={() => fetch()}>fetch</button> */}
          {matches.length
             ? matches.map(match => {
                  return <Match match={match} teams={getMatchTeams(match)} key={match.id} />
