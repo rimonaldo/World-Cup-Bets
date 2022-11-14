@@ -23,9 +23,9 @@ export default function Tournament({ userId }) {
    
    const setDummyBets = useUserStore(state => state.setDummyBets)
    
-   useEffect(() => {
-      setDummyBets(userId)
-   }, [])
+   // useEffect(() => {
+   //    setDummyBets(userId)
+   // }, [])
    
    function setGroups() {
       const B = { name: 'B', gTeams: [...teams.filter(t => t.groups === 'B')] }
@@ -46,7 +46,6 @@ export default function Tournament({ userId }) {
          {user.username}
          <section className="groups">
             {setGroups().map(group => {
-              
                return <Group group={group} key={group.name} user={user} userBets={userBets} />
             })}
          </section>
