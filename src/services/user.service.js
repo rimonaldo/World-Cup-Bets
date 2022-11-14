@@ -1,5 +1,6 @@
 import { httpService } from './http.service'
 import users from '../data/user.json'
+import { storageService } from './storage.service'
 const STORAGE_KEY = 'loggedUser'
 const LOGGED_KEY = 'loggedUser'
 
@@ -16,7 +17,11 @@ export const userService = {
    signupOthers,
    getAsyncUser,
    getLoggedUser,
-   setGroupLeader
+   setGroupLeader,
+   setBet,
+   getUserBets,
+   setUserBets,
+   setDummyBets,
 }
 
 const gUser = {
@@ -67,12 +72,10 @@ async function signupOthers(contacts) {
    })
 }
 
-
 // *IDEA - sort helper funcion
 const glist = users.sort((a, b) => {
    return b.points - a.points
 })
-
 
 async function getUsers() {
    // console.log('getting users')
@@ -83,8 +86,8 @@ async function getUsers() {
    })
    try {
       const users = await httpService.get(`user/`)
-      console.log(users);
-      return await httpService.get(`user/`) || await gUsers
+      console.log(users)
+      return (await httpService.get(`user/`)) || (await gUsers)
    } catch (error) {
       console.error(error)
    }
@@ -122,13 +125,23 @@ async function updateUser(user = null, username) {
    return user
 }
 
-async function setGroupLeader(bet){
-   console.log(bet);
-   console.log('setting group leader')
-   await httpService.put(`bet/groupLeader`, bet)
-   return {}
+async function setBet(betType, bet) {
+   console.log(bet)
+   console.log(`setting ${betType}`)
+   return await httpService.put(`bet/${betType}`, bet)
 }
 
+async function addBet(betType, bet) {
+   console.log(bet)
+   console.log(`setting ${betType}`)
+   return await httpService.put(`bet/${betType}`, bet)
+}
+
+async function editBet(betType, bet) {
+   console.log(bet)
+   console.log(`setting ${betType}`)
+   return await httpService.put(`bet/${betType}`, bet)
+}
 
 function getLoggedUser() {
    return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || 'null')
@@ -139,3 +152,44 @@ function _saveLocalUser(user) {
    return user
 }
 
+async function setGroupLeader(betType, bet) {
+   console.log(bet)
+   console.log('setting group leader')
+   bet = await httpService.put(`bet/${betType}`, bet)
+   // localStorage.setItem('userBets', JSON.stringify(bet))
+   return bet
+}
+
+function getEmpetyBets(userId) {
+   return {
+      isDummy: true,
+      groupLeader: { a: '', b: '', c: '', d: '', e: '', f: '', g: '', h: '' },
+      match: { matchId: '', homeScore: '', awayScore: '', scorers: [] },
+      userId,
+   }
+}
+
+async function getUserBets(userId) {
+   let userBets = await httpService.get(`bet/${userId}`)
+   if (userBets) {
+      userBets = userBets
+   } else {
+      userBets = getEmpetyBets()
+   }
+   localStorage.setItem('userBets', JSON.stringify(userBets))
+   console.log(userBets)
+   return userBets
+}
+
+async function setDummyBets(userId) {
+   let userBets = getEmpetyBets(userId)
+   userBets = await httpService.post(`bet/dummy`, userBets)
+   console.log('setting dummy bets: ')
+   return userBets
+}
+
+async function setUserBets(userId, userBets) {
+   userBets = await httpService.put(`bet/${userId}`, userBets)
+   console.log('user bets are: ', userBets)
+   return userBets
+}

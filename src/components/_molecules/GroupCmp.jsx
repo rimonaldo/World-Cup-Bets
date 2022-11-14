@@ -2,24 +2,30 @@ import React, { useState, useEffect } from 'react'
 import { tournamentService } from '../../services/tournament.service'
 import useStore from '../../store/useStore'
 import useUserStore from '../../store/useUserStore'
-export default function GroupTable({ group }) {
-   // const [groupQuals, setGroupQuals] = useState({})
+export default function GroupTable({ group, userBets }) {
+   const groupName = group.name.toLowerCase()
    const user = useUserStore(state => state.loggedUser)
-   const setGroupLeader = useUserStore(state => state.setGroupLeader)
+   // const groupLeader = useUserStore(state=> state.groupLeader)
+   const setUserBets = useUserStore(state => state.setUserBets)
+   const setBet = useUserStore(state => state.setBet)
 
+   // const groupLeader = userBets.groupLeaders
+   // useEffect(() => {
+   //    userBets
+   // }, [])
+   
    async function selectQual({ target }) {
-      const teamName = target.innerText
-      const team = await tournamentService.getTeamByName(teamName)
-      const group = team.groups.toLowerCase()
-      let groupQuals = { [group]: teamName }
-      // setGroupQuals({ ...groupQuals, [group]: teamName })
+      const betType = 'groupLeader'
+      let userBetsCopy = JSON.parse(JSON.stringify(userBets))
       const userId = user._id
-      const bet = {'groupLeader':{[userId]:{group, team:{teamName,teamId:team.id}}}}
-      // const betPrototype = {'betType':{[userId]:{'betData'}}}
-      await setGroupLeader(bet)
-      // document.querySelector('#'+updatedGroupQuals[group][1]).classList.add('qual')
-      // document.querySelector('#'+updatedGroupQuals[group][0]).classList.toggle('qual')
+      const teamName = target.innerText
+      const groupLeader = { ...userBetsCopy[betType], [groupName]: teamName }
+      userBetsCopy.isDummy = false
+      userBetsCopy[betType] = groupLeader
+      console.log(userBetsCopy)
+      await setUserBets(userId, userBetsCopy)
    }
+
    return (
       <>
          <table key={group.name} className="table group">
@@ -46,7 +52,11 @@ export default function GroupTable({ group }) {
                               <div className="flag-container">
                                  <img className="flag" src={team.flag} alt="" />
                               </div>
-                              <span className="" id={team.name_en} onClick={ev => selectQual(ev)}>
+                              <span
+                                 className={userBets.groupLeader[groupName] === team.name_en ? 'qual' : ''}
+                                 id={team.name_en}
+                                 onClick={ev => selectQual(ev)}
+                              >
                                  {team.name_en}
                               </span>
                            </td>

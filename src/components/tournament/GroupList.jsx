@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { tournamentService } from '../../services/tournament.service'
 import Group from '../_molecules/GroupCmp'
 import useStore from '../../store/useStore'
 import Tabs from '../_molecules/Tabs'
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-export default function Tournament() {
+import useUserStore from '../../store/useUserStore'
+
+export default function Tournament({ userId }) {
    async function fetch() {
       return await tournamentService.getTeams()
    }
@@ -12,7 +14,19 @@ export default function Tournament() {
    const user = useStore(state => state.loggedUser)
    function _getGroupLetters() {}
    const groups = 'ABCDEFGH'.split('')
+   const userBets = useUserStore(state => state.userBets)
 
+   const loadUserBets = useUserStore(state => state.loadUserBets)
+   useEffect(() => {
+      loadUserBets(userId)
+   }, [])
+   
+   const setDummyBets = useUserStore(state => state.setDummyBets)
+   
+   useEffect(() => {
+      setDummyBets(userId)
+   }, [])
+   
    function setGroups() {
       const B = { name: 'B', gTeams: [...teams.filter(t => t.groups === 'B')] }
       const A = { name: 'A', gTeams: [...teams.filter(t => t.groups === 'A')] }
@@ -32,12 +46,12 @@ export default function Tournament() {
          {user.username}
          <section className="groups">
             {setGroups().map(group => {
-               return <Group group={group} key={group.name} user={user}/>
+              
+               return <Group group={group} key={group.name} user={user} userBets={userBets} />
             })}
          </section>
          <Router>
-            <Switch>
-            </Switch>
+            <Switch></Switch>
          </Router>
       </div>
    )

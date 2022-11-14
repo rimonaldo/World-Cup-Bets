@@ -5,13 +5,17 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import GroupList from '../components/tournament/GroupList'
 import Upcoming from '../components/tournament/MatchList'
 import useStore from '../store/useStore'
+import useUserStore from '../store/useUserStore'
 import Header from '../components/header/HeaderMain'
+
 export default function HomePage() {
+   const loggedUser = useUserStore(state=>state.loggedUser)
+   const userId = loggedUser._id
    const setUsers = useStore(state => state.setUsers)
    useEffect(() => {
       setUsers()
    }, [])
-   
+
    const setTeams = useStore(state => state.setTeams)
    useEffect(() => {
       setTeams()
@@ -22,6 +26,9 @@ export default function HomePage() {
       setMatches()
    }, [])
 
+   const userBets = useUserStore.getState().userBets
+
+
    return (
       // server state
       <Router>
@@ -31,7 +38,7 @@ export default function HomePage() {
                {/* local data */}
                <Route path="/home/leaderboard" component={() => <Leaderboard />} />
                {/* server data */}
-               <Route path="/home/groups" component={GroupList} />
+               <Route path="/home/groups" component={() => <GroupList userId={userId} />} />
                {/* server data */}
                <Route path="/home/matches" component={Upcoming} />
             </Switch>

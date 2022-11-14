@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function AuthForm(props) {
    const setHideModal = useStore(state => state.hideModal)
 
-   const { loadApp } = props
+   const { loadPage } = props
    const modalState = useStore(state => state.modalState)
    const credentials = {
       username: '',
@@ -26,7 +26,7 @@ export default function AuthForm(props) {
       modalState.method === 'login' ? setLogin(credentials) : setSignup(credentials)
       setHideModal()
       console.log('hide');
-      
+      loadPage()
    }
 
    return (
